@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: my-self-signed-tls
+  namespace: saif
+spec:
+  secretName: my-self-signed-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: Issuer
+  commonName: nginx.testing.com
+  dnsNames:
+    - nginx.testing.com
